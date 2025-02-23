@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionTemplate.TestWPF", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionTemplate.MVC", "src\UI\SolutionTemplate.MVC\SolutionTemplate.MVC.csproj", "{66A8EB16-ABB6-48EC-9FA6-ADF74ECB65AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionTemplate.DAL.MySQL", "src\Data\SolutionTemplate.DAL.MySQL\SolutionTemplate.DAL.MySQL.csproj", "{E5D794C5-760C-495C-867F-C9CB2E4AF585}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{66A8EB16-ABB6-48EC-9FA6-ADF74ECB65AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66A8EB16-ABB6-48EC-9FA6-ADF74ECB65AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66A8EB16-ABB6-48EC-9FA6-ADF74ECB65AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5D794C5-760C-495C-867F-C9CB2E4AF585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5D794C5-760C-495C-867F-C9CB2E4AF585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5D794C5-760C-495C-867F-C9CB2E4AF585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5D794C5-760C-495C-867F-C9CB2E4AF585}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -155,6 +161,7 @@ Global
 		{06978F84-157B-471B-AED3-B1FE4527B65C} = {5E587AAF-39F4-431B-B9C9-A90425531D56}
 		{761EA8C9-AF22-46AB-A748-FA804D7401B4} = {5E587AAF-39F4-431B-B9C9-A90425531D56}
 		{66A8EB16-ABB6-48EC-9FA6-ADF74ECB65AA} = {900F2B53-6B3E-454F-9BFD-C7BE692AFB1F}
+		{E5D794C5-760C-495C-867F-C9CB2E4AF585} = {317FBD41-1B99-48BC-B2EB-10EB90E7117C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {146E35E1-6600-46DE-A606-E231502F07AB}
