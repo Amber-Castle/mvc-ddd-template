@@ -40,4 +40,8 @@
     <ProjectReference Include="..\..\Services\SolutionTemplate.Services\SolutionTemplate.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
 </Project>

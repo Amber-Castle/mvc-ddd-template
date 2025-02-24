@@ -7,6 +7,7 @@ using SolutionTemplate.DAL.MySQL;
 using SolutionTemplate.DAL.Sqlite;
 using SolutionTemplate.DAL.SqlServer;
 using SolutionTemplate.MVC.Infrastructure;
+using System;
 
 namespace SolutionTemplate.MVC;
 
@@ -62,8 +63,28 @@ public class Program
 
         services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 
-        builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-            .AddEntityFrameworkStores<SolutionTemplateDB>();
+        // Настраиваем Identity систему 
+        //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true);
+        builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+        {
+            options.User.RequireUniqueEmail = true;
+            options.Password.RequiredLength = 6;
+            options.Password.RequireNonAlphanumeric = false;
+            options.Password.RequireLowercase = false;
+            options.Password.RequireUppercase = false;
+            options.Password.RequireDigit = false;
+        }).AddEntityFrameworkStores<SolutionTemplateDB>().AddDefaultTokenProviders();
+        // Настраиваем Auth cookie
+        builder.Services.ConfigureApplicationCookie(options =>
+        {
+            options.Cookie.Name = "SolutionTemplateAuth";
+            options.Cookie.HttpOnly = true;
+            options.LoginPath = "/account/login";
+            options.AccessDeniedPath = "/admin/accessdenied";
+            options.SlidingExpiration = true;
+        });
+
+
         builder.Services.AddControllersWithViews()
             .AddRazorRuntimeCompilation();
 
@@ -110,8 +131,8 @@ public class Program
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}")
             .WithStaticAssets();
-        app.MapRazorPages()
-           .WithStaticAssets();
+        //app.MapRazorPages()
+        //   .WithStaticAssets();
 
         await app.RunAsync();
     }
