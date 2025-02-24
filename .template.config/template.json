@@ -29,7 +29,24 @@
     {
       "modifiers": [
         {
-          "exclude": [ "register.bat", "unregister.bat", "**/wwwroot/**", "**/bin/**", "**/obj/**", "**/.vs/**", "**/_ReSharper.Caches/**" ]
+          "exclude": [
+            "build.bat",
+            "clear.bat",
+            "clear-cache.bat",
+            "clear-obj.bat",
+            "LICENSE",
+            "qwe.bat",
+            "register.bat", 
+            "restore.bat",
+            "run.bat",
+            "unregister.bat", 
+            ".git/",
+            ".github/",
+            "**/wwwroot/**", 
+            "**/bin/**", 
+            "**/obj/**", 
+            "**/.vs/**", 
+            "**/_ReSharper.Caches/**" ]
         }
       ]
     }
