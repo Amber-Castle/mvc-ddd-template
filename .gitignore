@@ -399,3 +399,4 @@ FodyWeavers.xsd
 
 # MVC
 **/wwwroot/
+**/Logs/
