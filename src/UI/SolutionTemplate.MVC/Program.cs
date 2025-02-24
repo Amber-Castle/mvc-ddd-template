@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using SolutionTemplate.DAL.Context;
+using SolutionTemplate.DAL.MySQL;
 using SolutionTemplate.DAL.Sqlite;
 using SolutionTemplate.DAL.SqlServer;
 using SolutionTemplate.MVC.Infrastructure;
@@ -37,6 +38,13 @@ public class Program
                     builder.Configuration["Database"]
                     ?? throw new InvalidOperationException("Database configuration is missing."))!;
                 services.AddSolutionTemplateDbContextSqlServer(sqlServerConnectionString);
+                break;
+
+            case "MySql":
+                var mysqlConnectionString = builder.Configuration.GetConnectionString(
+                    builder.Configuration["Database"]
+                    ?? throw new InvalidOperationException("Database configuration is missing."))!;
+                services.AddSolutionTemplateDbContextMysql(mysqlConnectionString);
                 break;
 
             case "Sqlite":
