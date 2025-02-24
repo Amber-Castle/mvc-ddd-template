@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/UI/SolutionTemplate.MVC/wwwroot/lib/bootstrap/css/bootstrap-grid.css
